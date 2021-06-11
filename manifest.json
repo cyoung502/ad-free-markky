@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Ad Free Markky Streams",
+  "version": "1.0",
+  "description": "Removes abusive and malicious ads from Markky Streams.",
+  "author": "Young$",
+  "content_scripts": [
+    {
+      "matches": ["*://markkystreams.com/*", "*://6stream.xyz/*"],
+      "js": ["index.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "homepage_url": "https://upen.is",
+  "options_page": "options.html",
+  "permissions": ["tabs", "declarativeNetRequest"],
+  "short_name": "AFMS",
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
